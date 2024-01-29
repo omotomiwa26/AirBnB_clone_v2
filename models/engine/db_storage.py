@@ -15,7 +15,10 @@ from models.review import Review
 
 
 class DBStorage:
-    """This class manages storage of hbnb models in a SQL database"""
+    """
+        This class manages storage of hbnb models
+        in a SQL database
+    """
     __engine = None
     __session = None
 
@@ -78,7 +81,6 @@ class DBStorage:
 
         return objects
 
-
     def delete(self, obj=None):
         """Removes an object from the storage database"""
         if obj is not None:
@@ -112,5 +114,5 @@ class DBStorage:
         self.__session = scoped_session(SessionFactory)()
 
     def close(self):
-        """Closes the storage engine."""
-        self.__session.close()
+        """call remove() method on the private session"""
+        self.__session.remove()
