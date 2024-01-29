@@ -20,7 +20,7 @@ def index():
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
-    This flask hbnb route returns HBNB!
+    This flask hbnb route returns HBNB
     """
     return 'HBNB'
 
