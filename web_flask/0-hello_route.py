@@ -12,7 +12,7 @@ app = f(__name__)
 @app.route('/', strict_slashes=False)
 def index():
     """
-    This flask route returns Hello HBNB!
+    This flask home route returns Hello HBNB!
     """
     return 'Hello HBNB!'
 
