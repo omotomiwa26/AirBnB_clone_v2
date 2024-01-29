@@ -36,23 +36,6 @@ class DBStorage:
         if env == 'test':
             Base.metadata.drop_all(self.__engine)
 
-    # def all(self, cls=None):
-    #     """Returns a dictionary of models currently in storage"""
-    #     objects = dict()
-    #     all_classes = (User, State, City, Amenity, Place, Review)
-    #     if cls is None:
-    #         for class_type in all_classes:
-    #             query = self.__session.query(class_type)
-    #             for obj in query.all():
-    #                 obj_key = '{}.{}'.format(obj.__class__.__name__, obj.id)
-    #                 objects[obj_key] = obj
-    #     else:
-    #         query = self.__session.query(cls)
-    #         for obj in query.all():
-    #             obj_key = '{}.{}'.format(obj.__class__.__name__, obj.id)
-    #             objects[obj_key] = obj
-    #     return objects
-
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
         objects = dict()
@@ -77,7 +60,6 @@ class DBStorage:
                 objects[obj_key] = obj
 
         return objects
-
 
     def delete(self, obj=None):
         """Removes an object from the storage database"""
