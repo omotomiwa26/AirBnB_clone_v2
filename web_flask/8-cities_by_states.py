@@ -10,17 +10,14 @@ from models import storage
 app = f(__name__)
 
 
-@app.route('/states', strict_slashes=False)
-@app.route('/states/<state_id>', strict_slashes=False)
-def states(state_id=None):
+@app.route('/cities_by_states', strict_slashes=False)
+def cities_by_states():
     """
-    This states route displays the states and cities listed
-    in alphabetical order
+    This cities_by_states route displays the states and cities
+    listed in alphabetical order
     """
-    states = storage.all("State")
-    if state_id is not None:
-        state_id = 'State.' + state_id
-    return r('9-states.html', states=states, state_id=state_id)
+    states = storage.all("State").values()
+    return r('8-cities_by_states.html', states=states)
 
 
 @app.teardown_appcontext
