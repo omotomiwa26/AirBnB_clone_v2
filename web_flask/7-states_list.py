@@ -6,7 +6,7 @@ Flask application
 
 
 from flask import Flask as f, render_template as r
-from models import *
+from models import storage
 app = f(__name__)
 
 
